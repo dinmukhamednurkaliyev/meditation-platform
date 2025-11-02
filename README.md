@@ -1,1 +1,1 @@
-# meditation-platform
+# silent-moon-platform
