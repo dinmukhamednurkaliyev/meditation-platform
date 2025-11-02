@@ -12,13 +12,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  silent_moon_kit:
-    path: ../../packages/silent_moon_kit
+  silent_moon_core:
+    path: ../../packages/silent_moon_core
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   very_good_analysis: ^10.0.0
 
 flutter:

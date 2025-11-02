@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon_kit/color.dart';
+import 'package:silent_moon_core/silent_moon_core.dart';
 
 class Application extends StatelessWidget {
   const Application({super.key});
