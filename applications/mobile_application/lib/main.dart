@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:mobile_application/applicaiton.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
   runZonedGuarded(
     () {
+      WidgetsFlutterBinding.ensureInitialized();
       runApp(const Application());
     },
     (Object error, StackTrace stack) {

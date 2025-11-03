@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:silent_moon_core/presentation/tokens/animation.dart';
+import 'package:silent_moon_core/presentation/tokens/icon.dart';
+import 'package:silent_moon_core/presentation/tokens/padding.dart';
+import 'package:silent_moon_core/presentation/tokens/shape.dart';
+import 'package:silent_moon_core/presentation/tokens/spacing.dart';
+import 'package:silent_moon_core/presentation/tokens/text.dart';
 
-extension BuildContextExtension on BuildContext {
+extension SilentMoonBuildContextExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
 
   ColorScheme get color => theme.colorScheme;
@@ -9,7 +15,7 @@ extension BuildContextExtension on BuildContext {
 
   Color? get iconThemeColor => theme.iconTheme.color;
 
-  Text get text => (
+  TextContext get text => (
     style: (
       displayLarge: textTheme.displayLarge,
       displayMedium: textTheme.displayMedium,
@@ -57,7 +63,7 @@ extension BuildContextExtension on BuildContext {
     ),
   );
 
-  Spacing get spacing => (
+  SpacingContext get spacing => (
     size: (
       min: 0.0,
       tight: 4.0,
@@ -71,180 +77,60 @@ extension BuildContextExtension on BuildContext {
     ),
   );
 
-  Icon get icon => (
+  IconContext get icon => (
     size: (
-      min: 12.0,
-      tight: 16.0,
-      low: 20.0,
-      base: 24.0,
-      mid: 28.0,
-      high: 32.0,
-      wide: 40.0,
-      loose: 48.0,
-      max: 64.0,
+      min: SilentMoonIconSize.min,
+      tight: SilentMoonIconSize.tight,
+      low: SilentMoonIconSize.low,
+      base: SilentMoonIconSize.low,
+      mid: SilentMoonIconSize.mid,
+      high: SilentMoonIconSize.high,
+      wide: SilentMoonIconSize.wide,
+      loose: SilentMoonIconSize.loose,
+      max: SilentMoonIconSize.max,
     ),
   );
 
-  Padding get padding => (
+  PaddingContext get padding => (
     size: (
-      min: EdgeInsets.zero,
-      tight: const EdgeInsets.all(4),
-      low: const EdgeInsets.all(8),
-      base: const EdgeInsets.all(12),
-      mid: const EdgeInsets.all(16),
-      high: const EdgeInsets.all(24),
-      wide: const EdgeInsets.all(32),
-      loose: const EdgeInsets.all(48),
-      max: const EdgeInsets.all(64),
+      min: SilentMoonPaddingSize.min,
+      tight: SilentMoonPaddingSize.tight,
+      low: SilentMoonPaddingSize.low,
+      base: SilentMoonPaddingSize.base,
+      mid: SilentMoonPaddingSize.mid,
+      high: SilentMoonPaddingSize.high,
+      wide: SilentMoonPaddingSize.wide,
+      loose: SilentMoonPaddingSize.loose,
+      max: SilentMoonPaddingSize.max,
     ),
   );
 
-  Shapes get shape => (
+  ShapeContext get shape => (
     radius: (
-      min: BorderRadius.zero,
-      tight: BorderRadius.circular(2),
-      low: BorderRadius.circular(4),
-      base: BorderRadius.circular(8),
-      mid: BorderRadius.circular(12),
-      high: BorderRadius.circular(16),
-      wide: BorderRadius.circular(24),
-      loose: BorderRadius.circular(32),
-      max: BorderRadius.circular(999),
+      min: SilentMoonShapeRadius.min,
+      tight: SilentMoonShapeRadius.tight,
+      low: SilentMoonShapeRadius.low,
+      base: SilentMoonShapeRadius.base,
+      mid: SilentMoonShapeRadius.mid,
+      high: SilentMoonShapeRadius.high,
+      wide: SilentMoonShapeRadius.wide,
+      loose: SilentMoonShapeRadius.loose,
+      max: SilentMoonShapeRadius.max,
     ),
   );
 
-  Animations get animation => (
+  AnimationContext get animation => (
     duration: (
-      shortest: const Duration(milliseconds: 75),
-      short: const Duration(milliseconds: 150),
-      medium: const Duration(milliseconds: 300),
-      long: const Duration(milliseconds: 500),
-      longest: const Duration(milliseconds: 800),
+      shortest: SilentMoonAnimationDuration.shortest,
+      short: SilentMoonAnimationDuration.short,
+      medium: SilentMoonAnimationDuration.medium,
+      long: SilentMoonAnimationDuration.long,
+      longest: SilentMoonAnimationDuration.longest,
     ),
     curve: (
-      standard: Curves.easeInOut,
-      accelerate: Curves.easeIn,
-      decelerate: Curves.easeOut,
+      standard: SilentMoonAnimationCurve.standard,
+      accelerate: SilentMoonAnimationCurve.accelerate,
+      decelerate: SilentMoonAnimationCurve.decelerate,
     ),
   );
 }
-
-typedef Text = ({TextStyles style, TextSizes size, TextWeights weight});
-
-typedef TextWeights = ({
-  FontWeight thin,
-  FontWeight extraLight,
-  FontWeight light,
-  FontWeight normal,
-  FontWeight medium,
-  FontWeight semiBold,
-  FontWeight bold,
-  FontWeight extraBold,
-  FontWeight black,
-});
-
-typedef TextStyles = ({
-  TextStyle? displayLarge,
-  TextStyle? displayMedium,
-  TextStyle? displaySmall,
-
-  TextStyle? headlineLarge,
-  TextStyle? headlineMedium,
-  TextStyle? headlineSmall,
-
-  TextStyle? titleLarge,
-  TextStyle? titleMedium,
-  TextStyle? titleSmall,
-
-  TextStyle? bodyLarge,
-  TextStyle? bodyMedium,
-  TextStyle? bodySmall,
-
-  TextStyle? labelLarge,
-  TextStyle? labelMedium,
-  TextStyle? labelSmall,
-});
-
-typedef TextSizes = ({
-  double min,
-  double tight,
-  double low,
-  double base,
-  double mid,
-  double high,
-  double wide,
-  double loose,
-  double max,
-});
-
-typedef Spacing = ({SpacingSizes size});
-
-typedef Icon = ({IconSizes size});
-
-typedef Padding = ({PaddingSizes size});
-
-typedef PaddingSizes = ({
-  EdgeInsets min,
-  EdgeInsets tight,
-  EdgeInsets low,
-  EdgeInsets base,
-  EdgeInsets mid,
-  EdgeInsets high,
-  EdgeInsets wide,
-  EdgeInsets loose,
-  EdgeInsets max,
-});
-
-typedef SpacingSizes = ({
-  double min,
-  double tight,
-  double low,
-  double base,
-  double mid,
-  double high,
-  double wide,
-  double loose,
-  double max,
-});
-
-typedef IconSizes = ({
-  double min,
-  double tight,
-  double low,
-  double base,
-  double mid,
-  double high,
-  double wide,
-  double loose,
-  double max,
-});
-
-typedef Shapes = ({ShapeRadii radius});
-
-typedef ShapeRadii = ({
-  BorderRadius min,
-  BorderRadius tight,
-  BorderRadius low,
-  BorderRadius base,
-  BorderRadius mid,
-  BorderRadius high,
-  BorderRadius wide,
-  BorderRadius loose,
-  BorderRadius max,
-});
-
-typedef Animations = ({AnimationDurations duration, AnimationCurves curve});
-
-typedef AnimationDurations = ({
-  Duration shortest,
-  Duration short,
-  Duration medium,
-  Duration long,
-  Duration longest,
-});
-
-typedef AnimationCurves = ({
-  Curve standard,
-  Curve accelerate,
-  Curve decelerate,
-});

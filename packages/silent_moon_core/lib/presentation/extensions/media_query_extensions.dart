@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 typedef ScreenValues = ({Size size, double width, double height});
 
-extension MediaExtensions on BuildContext {
+extension SilentMoonMediaExtensions on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
   ScreenValues get screen {
