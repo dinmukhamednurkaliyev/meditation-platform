@@ -1,27 +1,25 @@
-import 'package:flutter/widgets.dart';
-
 typedef PaddingContext = ({PaddingSizeContext size});
 typedef PaddingSizeContext = ({
-  EdgeInsets min,
-  EdgeInsets tight,
-  EdgeInsets low,
-  EdgeInsets base,
-  EdgeInsets mid,
-  EdgeInsets high,
-  EdgeInsets wide,
-  EdgeInsets loose,
-  EdgeInsets max,
+  double min,
+  double tight,
+  double low,
+  double base,
+  double mid,
+  double high,
+  double wide,
+  double loose,
+  double max,
 });
 
 abstract class SilentMoonPaddingSize {
   const SilentMoonPaddingSize();
-  static const EdgeInsets min = EdgeInsets.zero;
-  static const EdgeInsets tight = EdgeInsets.all(4);
-  static const EdgeInsets low = EdgeInsets.all(8);
-  static const EdgeInsets base = EdgeInsets.all(12);
-  static const EdgeInsets mid = EdgeInsets.all(16);
-  static const EdgeInsets high = EdgeInsets.all(24);
-  static const EdgeInsets wide = EdgeInsets.all(32);
-  static const EdgeInsets loose = EdgeInsets.all(48);
-  static const EdgeInsets max = EdgeInsets.all(64);
+  static const double min = 0;
+  static const double tight = 4;
+  static const double low = 8;
+  static const double base = 12;
+  static const double mid = 16;
+  static const double high = 24;
+  static const double wide = 32;
+  static const double loose = 48;
+  static const double max = 64;
 }

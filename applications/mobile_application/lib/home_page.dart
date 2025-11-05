@@ -8,7 +8,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SilentMoonScaffold(
       body: Column(
-        children: [Text('data')],
+        children: [
+          Text('data'),
+          SilentMoonTextField(
+            hintText: 'Email',
+          ),
+          SilentMoonTextField(
+            hintText: 'Password',
+          ),
+        ],
       ),
     );
   }

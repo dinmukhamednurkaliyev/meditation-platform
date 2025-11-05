@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:silent_moon_core/tokens/padding.dart';
+
+final silentMoonFieldStyle = SilentMoonTextFieldStyle(
+  contentPadding: const EdgeInsets.symmetric(
+    horizontal: SilentMoonPaddingSize.mid,
+  ),
+  border: WidgetStateProperty.all(InputBorder.none),
+);
 
 class SilentMoonTextField extends StatelessWidget {
   const SilentMoonTextField({
@@ -8,6 +16,8 @@ class SilentMoonTextField extends StatelessWidget {
     this.obscureText = false,
     this.hintText,
     this.style,
+    this.onSuffixIconPressed,
+    this.suffixIcon,
   });
 
   final TextEditingController? controller;
@@ -15,6 +25,8 @@ class SilentMoonTextField extends StatelessWidget {
   final bool obscureText;
   final String? hintText;
   final SilentMoonTextFieldStyle? style;
+  final Widget? suffixIcon;
+  final VoidCallback? onSuffixIconPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +36,16 @@ class SilentMoonTextField extends StatelessWidget {
 
     final effectiveStyle =
         themeStyle?.copyWith(
-          surfaceColor: style?.surfaceColor ?? themeStyle.surfaceColor,
-          textStyle: style?.textStyle ?? themeStyle.textStyle,
-          hintStyle: style?.hintStyle ?? themeStyle.hintStyle,
-          border: style?.border ?? themeStyle.border,
+          surfaceColor: style?.surfaceColor,
+          textStyle: style?.textStyle,
+          hintStyle: style?.hintStyle,
+          border: style?.border,
+          contentPadding: style?.contentPadding,
+          suffixIcon: style?.suffixIcon,
         ) ??
         style;
+
+    final finalSuffixIcon = suffixIcon ?? effectiveStyle?.suffixIcon;
 
     return TextField(
       controller: controller,
@@ -37,6 +53,7 @@ class SilentMoonTextField extends StatelessWidget {
       obscureText: obscureText,
       style: effectiveStyle?.textStyle,
       decoration: InputDecoration(
+        contentPadding: effectiveStyle?.contentPadding,
         filled: true,
         fillColor: effectiveStyle?.surfaceColor?.resolve(
           {},
@@ -48,6 +65,12 @@ class SilentMoonTextField extends StatelessWidget {
         focusedBorder: effectiveStyle?.border?.resolve({
           WidgetState.focused,
         }),
+        suffixIcon: finalSuffixIcon != null
+            ? IconButton(
+                onPressed: onSuffixIconPressed,
+                icon: finalSuffixIcon,
+              )
+            : null,
       ),
     );
   }
@@ -56,31 +79,36 @@ class SilentMoonTextField extends StatelessWidget {
 @immutable
 class SilentMoonTextFieldStyle {
   const SilentMoonTextFieldStyle({
+    this.suffixIcon,
     this.surfaceColor,
     this.textStyle,
     this.hintStyle,
     this.border,
+    this.contentPadding,
   });
 
   final WidgetStateProperty<Color?>? surfaceColor;
-
   final TextStyle? textStyle;
-
   final TextStyle? hintStyle;
-
   final WidgetStateProperty<InputBorder?>? border;
+  final EdgeInsetsGeometry? contentPadding;
+  final Widget? suffixIcon;
 
   SilentMoonTextFieldStyle copyWith({
     WidgetStateProperty<Color?>? surfaceColor,
     TextStyle? textStyle,
     TextStyle? hintStyle,
     WidgetStateProperty<InputBorder?>? border,
+    EdgeInsetsGeometry? contentPadding,
+    Widget? suffixIcon,
   }) {
     return SilentMoonTextFieldStyle(
       surfaceColor: surfaceColor ?? this.surfaceColor,
       textStyle: textStyle ?? this.textStyle,
       hintStyle: hintStyle ?? this.hintStyle,
       border: border ?? this.border,
+      contentPadding: contentPadding ?? this.contentPadding,
+      suffixIcon: suffixIcon ?? this.suffixIcon,
     );
   }
 
@@ -110,6 +138,12 @@ class SilentMoonTextFieldStyle {
                 )
                 as InputBorder?,
       ),
+      contentPadding: EdgeInsetsGeometry.lerp(
+        a?.contentPadding,
+        b?.contentPadding,
+        t,
+      ),
+      suffixIcon: t < 0.5 ? a?.suffixIcon : b?.suffixIcon,
     );
   }
 }
