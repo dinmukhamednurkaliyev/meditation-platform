@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silent_moon_core/tokens/color.dart';
+import 'package:silent_moon_core/tokens/padding.dart';
+import 'package:silent_moon_core/tokens/shape.dart';
 import 'package:silent_moon_core/widgets/button.dart';
 import 'package:silent_moon_core/widgets/text_field.dart';
 
@@ -50,16 +52,45 @@ class SilentMoonTheme {
       onTertiary: onTertiary,
     );
     final extensions = <ThemeExtension<dynamic>>[
-      SilentMoonTextFieldTheme(
-        defaultStyle: textFieldDefaultStyle,
-        emailStyle: textFieldemailStyle,
-        passwordStyle: textFieldpasswordStyle,
-      ),
-      SilentMoonButtonTheme(defaultStyle: buttonDefaultStyle),
+      _buildTextFieldTheme(),
+      _buildButtonTheme(colorScheme),
     ];
     return ThemeData(
       colorScheme: colorScheme,
       extensions: extensions,
+    );
+  }
+
+  SilentMoonButtonTheme _buildButtonTheme(ColorScheme colorScheme) {
+    return SilentMoonButtonTheme(
+      defaultStyle: SilentMoonButtonStyle(
+        backgroundColor: WidgetStateProperty.all(colorScheme.primary),
+        foregroundColor: WidgetStateProperty.all(colorScheme.onPrimary),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: SilentMoonShapeRadius.loose,
+          ),
+        ),
+      ),
+    );
+  }
+
+  SilentMoonTextFieldTheme _buildTextFieldTheme() {
+    final baseStyle = SilentMoonTextFieldStyle(
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: SilentMoonPaddingSize.mid,
+      ),
+      border: WidgetStateProperty.all(InputBorder.none),
+    );
+
+    return SilentMoonTextFieldTheme(
+      defaultStyle: baseStyle,
+      emailStyle: baseStyle.copyWith(
+        suffixIcon: const Icon(Icons.mail),
+      ),
+      passwordStyle: baseStyle.copyWith(
+        suffixIcon: const Icon(Icons.lock),
+      ),
     );
   }
 }

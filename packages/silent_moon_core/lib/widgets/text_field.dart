@@ -1,22 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon_core/tokens/padding.dart';
-
-final textFieldDefaultStyle = SilentMoonTextFieldStyle(
-  contentPadding: const EdgeInsets.symmetric(
-    horizontal: SilentMoonPaddingSize.mid,
-  ),
-  border: WidgetStateProperty.all(InputBorder.none),
-);
-
-final SilentMoonTextFieldStyle textFieldemailStyle = textFieldDefaultStyle
-    .copyWith(
-      suffixIcon: const Icon(Icons.mail),
-    );
-
-final SilentMoonTextFieldStyle textFieldpasswordStyle = textFieldDefaultStyle
-    .copyWith(
-      suffixIcon: const Icon(Icons.lock),
-    );
 
 class SilentMoonTextField extends StatelessWidget {
   const SilentMoonTextField({
