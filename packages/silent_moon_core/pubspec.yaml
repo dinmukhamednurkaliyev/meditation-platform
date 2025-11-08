@@ -11,16 +11,20 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.2.2
+  vector_graphics: ^1.1.19
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  vector_graphics_compiler: ^1.1.19
   very_good_analysis: ^10.0.0
 
 flutter:
   uses-material-design: true
   assets:
   - assets/icons/
+  transformers:
+        - package: vector_graphics_compiler
 
   fonts:
     - family: HelveticaNeue
