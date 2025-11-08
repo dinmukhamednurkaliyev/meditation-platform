@@ -12,12 +12,14 @@ class Applicaiton extends StatelessWidget {
     const title = 'Silent Moon';
     const home = HomePage();
     const debugShowCheckedModeBanner = false;
+    final theme = SilentMoonTheme.light;
+    final darkTheme = SilentMoonTheme.dark;
     return MaterialApp(
       title: title,
       debugShowCheckedModeBanner: debugShowCheckedModeBanner,
       home: home,
-      theme: SilentMoonTheme.light,
-      darkTheme: SilentMoonTheme.dark,
+      theme: theme,
+      darkTheme: darkTheme,
     );
   }
 }

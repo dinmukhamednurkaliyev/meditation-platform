@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon_core/tokens/color.dart';
+import 'package:silent_moon_core/silent_moon_core.dart';
 import 'package:silent_moon_core/tokens/padding.dart';
 import 'package:silent_moon_core/tokens/shape.dart';
-import 'package:silent_moon_core/widgets/button.dart';
-import 'package:silent_moon_core/widgets/text_field.dart';
 
 class SilentMoonTheme {
   const SilentMoonTheme._();
@@ -51,6 +49,7 @@ class SilentMoonTheme {
       tertiary: tertiary,
       onTertiary: onTertiary,
     );
+    const textTheme = TextTheme();
     final extensions = <ThemeExtension<dynamic>>[
       _buildTextFieldTheme(),
       _buildButtonTheme(colorScheme),
@@ -58,6 +57,8 @@ class SilentMoonTheme {
     return ThemeData(
       colorScheme: colorScheme,
       extensions: extensions,
+      textTheme: textTheme,
+      fontFamily: SilentMoonFontFamilyAsset.helveticaNeue,
     );
   }
 
