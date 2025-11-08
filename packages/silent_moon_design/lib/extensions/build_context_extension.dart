@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon_core/tokens/animation.dart';
-import 'package:silent_moon_core/tokens/font.dart';
-import 'package:silent_moon_core/tokens/icon.dart';
-import 'package:silent_moon_core/tokens/padding.dart';
-import 'package:silent_moon_core/tokens/shape.dart';
-import 'package:silent_moon_core/tokens/spacing.dart';
+import 'package:silent_moon_design/tokens/animation.dart';
+import 'package:silent_moon_design/tokens/font.dart';
+import 'package:silent_moon_design/tokens/icon.dart';
+import 'package:silent_moon_design/tokens/padding.dart';
+import 'package:silent_moon_design/tokens/shape.dart';
+import 'package:silent_moon_design/tokens/spacing.dart';
 
 typedef TextContext = ({
   TextStyleContext style,

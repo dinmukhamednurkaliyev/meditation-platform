@@ -37,30 +37,12 @@ class SilentMoonSocialMediaColors {
   SilentMoonSocialMediaColors._();
 
   static const facebook = SilentMoonColorScheme(
-    main: Color(0xFF1877F2),
-    on: Color(0xFFFFFFFF),
-    hover: Color(0xFF166FE5),
-    disabled: Color(0xFFB3D7FF),
-  );
-
-  static const twitter = SilentMoonColorScheme(
-    main: Color(0xFF1DA1F2),
-    on: Color(0xFFFFFFFF),
-    hover: Color(0xFF1A91DA),
-    disabled: Color(0xFFB3E5FF),
+    main: Color(0xFF7583CA),
+    on: Color(0xFFF6F1FB),
   );
 
   static const google = SilentMoonColorScheme(
-    main: Color(0xFFDB4437),
-    on: Color(0xFFFFFFFF),
-    hover: Color(0xFFC33D2E),
-    disabled: Color(0xFFF5B7B1),
-  );
-
-  static const apple = SilentMoonColorScheme(
-    main: Color(0xFF000000),
-    on: Color(0xFFFFFFFF),
-    hover: Color(0xFF333333),
-    disabled: Color(0xFFCCCCCC),
+    main: Color(0xFFEBEAEC),
+    on: Color(0xFF3F414E),
   );
 }

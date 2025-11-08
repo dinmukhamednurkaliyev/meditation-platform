@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_application/home_page.dart';
-import 'package:silent_moon_core/silent_moon_core.dart';
+import 'package:silent_moon_design/silent_moon_design.dart';
 
 class Applicaiton extends StatelessWidget {
   const Applicaiton({

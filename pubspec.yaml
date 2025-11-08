@@ -3,7 +3,7 @@ publish_to: none
 
 workspace:
 - applications/mobile_application
-- packages/silent_moon_core
+- packages/silent_moon_design
 
 environment:
   sdk: '^3.10.0-162.1.beta'
