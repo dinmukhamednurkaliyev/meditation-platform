@@ -75,7 +75,7 @@ class SilentMoonTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     final baseDecoration = style.decoration ?? const InputDecoration();
 
-    final decoration = baseDecoration.copyWith(
+    final composedDecoration = baseDecoration.copyWith(
       labelText: style.labelText,
       prefixIcon: style.prefixIcon,
       helperText: style.helperText,
@@ -83,7 +83,7 @@ class SilentMoonTextField extends StatelessWidget {
 
     return TextField(
       controller: controller,
-      decoration: decoration,
+      decoration: composedDecoration,
       style: style.textStyle,
       obscureText: obscureText,
       keyboardType: textInputType,

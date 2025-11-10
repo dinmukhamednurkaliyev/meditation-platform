@@ -126,7 +126,11 @@ class SilentMoonTheme {
               ),
             ),
           ),
-          scaffold: SilentMoonScaffoldTheme(primary: SilentMoonScaffoldStyle()),
+          scaffold: SilentMoonScaffoldTheme(
+            primary: SilentMoonScaffoldStyle(
+              padding: EdgeInsets.all(SilentMoon.dimension.padding.mid),
+            ),
+          ),
         ),
       ],
     );

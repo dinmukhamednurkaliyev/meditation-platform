@@ -6,6 +6,7 @@ class SilentMoonScaffold extends StatelessWidget {
     required BuildContext context,
     required Widget body,
     Key? key,
+    EdgeInsetsGeometry? padding,
   }) {
     final style = Theme.of(
       context,
@@ -15,6 +16,7 @@ class SilentMoonScaffold extends StatelessWidget {
       style: style,
       key: key,
       body: body,
+      padding: padding,
     );
   }
 
@@ -22,17 +24,29 @@ class SilentMoonScaffold extends StatelessWidget {
     required this.body,
     required this.style,
     super.key,
+    this.padding,
   });
   final Widget body;
   final SilentMoonScaffoldStyle style;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
+    final effectivePadding = padding ?? style.padding;
+    var child = body;
+
+    if (effectivePadding != null) {
+      child = Padding(
+        padding: effectivePadding,
+        child: child,
+      );
+    }
     return Theme(
       data: Theme.of(context),
       child: Scaffold(
         key: key,
-        body: SafeArea(child: body),
+        backgroundColor: style.backgroundColor,
+        body: SafeArea(child: child),
       ),
     );
   }
@@ -40,15 +54,29 @@ class SilentMoonScaffold extends StatelessWidget {
 
 @immutable
 class SilentMoonScaffoldStyle {
-  SilentMoonScaffoldStyle copyWith() {
-    return SilentMoonScaffoldStyle();
+  const SilentMoonScaffoldStyle({this.backgroundColor, this.padding});
+
+  final Color? backgroundColor;
+  final EdgeInsetsGeometry? padding;
+
+  SilentMoonScaffoldStyle copyWith(
+    Color? backgroundColor,
+    EdgeInsetsGeometry? padding,
+  ) {
+    return SilentMoonScaffoldStyle(
+      backgroundColor: backgroundColor ?? this.backgroundColor,
+      padding: padding ?? this.padding,
+    );
   }
 
   SilentMoonScaffoldStyle lerp(SilentMoonScaffoldStyle? other, double t) {
     if (other is! SilentMoonScaffoldStyle) {
       return this;
     }
-    return SilentMoonScaffoldStyle();
+    return SilentMoonScaffoldStyle(
+      backgroundColor: Color.lerp(backgroundColor, other.backgroundColor, t),
+      padding: EdgeInsetsGeometry.lerp(padding, other.padding, t),
+    );
   }
 }
 
