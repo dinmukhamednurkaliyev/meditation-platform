@@ -1,11 +1,10 @@
 name: shared
 resolution: workspace
-description: "A new Flutter package project."
+description: A new Flutter package project.
 version: 0.0.1
 
 environment:
-  sdk: ^3.10.0-162.1.beta
-  flutter: ">=1.17.0"
+  sdk: ^3.11.0-93.1.beta
 
 dependencies:
   flutter:

@@ -1,13 +1,13 @@
 name: mobile_application
 resolution: workspace
-description: "A new Flutter project."
+description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.10.0-162.1.beta
+  sdk: ^3.11.0-93.1.beta
 
 dependencies:
   flutter:

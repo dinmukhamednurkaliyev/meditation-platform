@@ -25,13 +25,13 @@ class _FontSize {
 
 class _FontWeight {
   _FontWeight();
-  FontWeight get black => FontWeight.w900;
-  FontWeight get bold => FontWeight.w700;
-  FontWeight get extraBold => FontWeight.w800;
-  FontWeight get extraLight => FontWeight.w200;
-  FontWeight get light => FontWeight.w300;
-  FontWeight get medium => FontWeight.w500;
-  FontWeight get normal => FontWeight.w400;
-  FontWeight get semiBold => FontWeight.w600;
+  FontWeight get black => .w900;
+  FontWeight get bold => .w700;
+  FontWeight get extraBold => .w800;
+  FontWeight get extraLight => .w200;
+  FontWeight get light => .w300;
+  FontWeight get medium => .w500;
+  FontWeight get normal => .w400;
+  FontWeight get semiBold => .w600;
   FontWeight get thin => FontWeight.w100;
 }
