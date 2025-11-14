@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shared/extensions/extensions.dart';
 import 'package:shared/silent_moon.dart';
-import 'package:shared/widgets/widgets.dart';
 
 class SilentMoonTheme {
   const SilentMoonTheme._();
@@ -23,151 +20,34 @@ class SilentMoonTheme {
     );
 
     final textTheme = TextTheme(
-      displayLarge: TextStyle(
-        fontSize: SilentMoon.font.size.max,
-        fontWeight: SilentMoon.font.weight.extraBold,
-      ),
-      displayMedium: TextStyle(
-        fontSize: SilentMoon.font.size.loose,
-        fontWeight: SilentMoon.font.weight.bold,
-      ),
-      displaySmall: TextStyle(
-        fontSize: SilentMoon.font.size.wide,
-        fontWeight: SilentMoon.font.weight.semiBold,
-      ),
+      displayLarge: SilentMoon.font.style.displayLarge,
+      displayMedium: SilentMoon.font.style.displayMedium,
+      displaySmall: SilentMoon.font.style.displaySmall,
 
-      headlineLarge: TextStyle(
-        fontSize: SilentMoon.font.size.high,
-        fontWeight: SilentMoon.font.weight.semiBold,
-      ),
-      headlineMedium: TextStyle(
-        fontSize: SilentMoon.font.size.mid,
-        fontWeight: SilentMoon.font.weight.semiBold,
-      ),
-      headlineSmall: TextStyle(
-        fontSize: SilentMoon.font.size.base,
-        fontWeight: SilentMoon.font.weight.medium,
-      ),
+      headlineLarge: SilentMoon.font.style.headlineLarge,
+      headlineMedium: SilentMoon.font.style.headlineMedium,
+      headlineSmall: SilentMoon.font.style.headlineSmall,
 
-      titleLarge: TextStyle(
-        fontSize: SilentMoon.font.size.high,
-        fontWeight: SilentMoon.font.weight.medium,
-      ),
-      titleMedium: TextStyle(
-        fontSize: SilentMoon.font.size.mid,
-        fontWeight: SilentMoon.font.weight.medium,
-      ),
-      titleSmall: TextStyle(
-        fontSize: SilentMoon.font.size.low,
-        fontWeight: SilentMoon.font.weight.medium,
-      ),
+      titleLarge: SilentMoon.font.style.titleLarge,
+      titleMedium: SilentMoon.font.style.titleMedium,
+      titleSmall: SilentMoon.font.style.titleSmall,
 
-      bodyLarge: TextStyle(
-        fontSize: SilentMoon.font.size.mid,
-        fontWeight: SilentMoon.font.weight.normal,
-      ),
-      bodyMedium: TextStyle(
-        fontSize: SilentMoon.font.size.base,
-        fontWeight: SilentMoon.font.weight.normal,
-      ),
-      bodySmall: TextStyle(
-        fontSize: SilentMoon.font.size.low,
-        fontWeight: SilentMoon.font.weight.normal,
-      ),
+      bodyLarge: SilentMoon.font.style.bodyLarge,
+      bodyMedium: SilentMoon.font.style.bodyMedium,
+      bodySmall: SilentMoon.font.style.bodySmall,
 
-      labelLarge: TextStyle(
-        fontSize: SilentMoon.font.size.base,
-        fontWeight: SilentMoon.font.weight.semiBold,
-      ),
-      labelMedium: TextStyle(
-        fontSize: SilentMoon.font.size.low,
-        fontWeight: SilentMoon.font.weight.semiBold,
-      ),
-      labelSmall: TextStyle(
-        fontSize: SilentMoon.font.size.tight,
-        fontWeight: SilentMoon.font.weight.medium,
-      ),
+      labelLarge: SilentMoon.font.style.labelLarge,
+      labelMedium: SilentMoon.font.style.labelMedium,
+      labelSmall: SilentMoon.font.style.labelSmall,
     );
 
     final fontFamily = SilentMoon.font.family;
 
-    final decoration = InputDecoration(
-      filled: true,
-      fillColor: SilentMoon.color.semantic.input.main,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(SilentMoon.dimension.radius.high),
-        borderSide: BorderSide.none,
-      ),
-      hintStyle: textTheme.bodyLarge?.copyWith(
-        color: SilentMoon.color.semantic.input.on,
-      ),
-      contentPadding: EdgeInsets.symmetric(
-        horizontal: SilentMoon.dimension.spacing.mid,
-        vertical: SilentMoon.dimension.spacing.mid,
-      ),
-    );
     return ThemeData(
       colorScheme: colorScheme,
       fontFamily: fontFamily,
       textTheme: textTheme,
-      extensions: [
-        SilentMoonWidgetThemeExtension(
-          textField: SilentMoonTextFieldTheme(
-            primary: SilentMoonTextFieldStyle(decoration: decoration),
-            email: SilentMoonTextFieldStyle(
-              decoration: decoration.copyWith(
-                hintText: 'Email address',
-              ),
-            ),
-            password: SilentMoonTextFieldStyle(
-              decoration: decoration.copyWith(
-                hintText: 'Password',
-              ),
-            ),
-          ),
-          button: SilentMoonButtonTheme(
-            primary: SilentMoonButtonStyle(
-              backgroundColor: WidgetStateProperty.all(
-                SilentMoon.color.semantic.primary.main,
-              ),
-              foregroundColor: WidgetStateProperty.all(
-                SilentMoon.color.semantic.primary.on,
-              ),
-            ),
-            facebook: SilentMoonButtonStyle(
-              backgroundColor: WidgetStateProperty.all(
-                SilentMoon.color.social.facebook.main,
-              ),
-              foregroundColor: WidgetStateProperty.all(
-                SilentMoon.color.social.facebook.on,
-              ),
-              leadingIcon: SvgPicture.asset(
-                SilentMoon.icon.social.facebook,
-                height: 20,
-                width: 20,
-              ),
-            ),
-            google: SilentMoonButtonStyle(
-              backgroundColor: WidgetStateProperty.all(
-                SilentMoon.color.social.google.main,
-              ),
-              leadingIcon: SvgPicture.asset(
-                SilentMoon.icon.social.google,
-                height: 20,
-                width: 20,
-              ),
-              foregroundColor: WidgetStateProperty.all(
-                SilentMoon.color.social.google.on,
-              ),
-            ),
-          ),
-          scaffold: SilentMoonScaffoldTheme(
-            primary: SilentMoonScaffoldStyle(
-              padding: EdgeInsets.all(SilentMoon.dimension.padding.mid),
-            ),
-          ),
-        ),
-      ],
+      extensions: const [],
     );
   }
 }

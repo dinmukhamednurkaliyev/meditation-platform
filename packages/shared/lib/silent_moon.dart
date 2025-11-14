@@ -1,8 +1,8 @@
-import 'package:shared/animations/token.dart';
-import 'package:shared/colors/token.dart';
-import 'package:shared/dimensions/token.dart';
-import 'package:shared/fonts/token.dart';
-import 'package:shared/icons/token.dart';
+import 'package:shared/animation.dart';
+import 'package:shared/color.dart';
+import 'package:shared/dimension.dart';
+import 'package:shared/font.dart';
+import 'package:shared/icon.dart';
 
 class SilentMoon {
   const SilentMoon._();

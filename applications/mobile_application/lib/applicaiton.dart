@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_application/pages/onboarding.dart';
+import 'package:mobile_application/onboarding.dart';
 import 'package:shared/shared.dart';
 
 class Application extends StatelessWidget {
