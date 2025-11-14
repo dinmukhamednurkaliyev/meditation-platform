@@ -5,33 +5,33 @@ class SilentMoonFont {
 
   final String family = 'HelveticaNeue';
 
-  final size = _FontSize();
+  final  size = _FontSize();
 
   final weight = _FontWeight();
 }
 
 class _FontSize {
   _FontSize();
-  double get base => 14;
-  double get high => 20;
-  double get loose => 32;
-  double get low => 12;
-  double get max => 48;
-  double get mid => 16;
-  double get min => 0;
-  double get tight => 10;
-  double get wide => 24;
+  final double base = 14;
+  final double high = 20;
+  final double loose = 32;
+  final double low = 12;
+  final double max = 48;
+  final double mid = 16;
+  final double min = 0;
+  final double tight = 10;
+  final double wide = 24;
 }
 
 class _FontWeight {
   _FontWeight();
-  FontWeight get black => .w900;
-  FontWeight get bold => .w700;
-  FontWeight get extraBold => .w800;
-  FontWeight get extraLight => .w200;
-  FontWeight get light => .w300;
-  FontWeight get medium => .w500;
-  FontWeight get normal => .w400;
-  FontWeight get semiBold => .w600;
-  FontWeight get thin => FontWeight.w100;
+  final FontWeight black = .w900;
+  final FontWeight bold = .w700;
+  final FontWeight extraBold = .w800;
+  final FontWeight extraLight = .w200;
+  final FontWeight light = .w300;
+  final FontWeight medium = .w500;
+  final FontWeight normal = .w400;
+  final FontWeight semiBold = .w600;
+  final FontWeight thin = .w100;
 }

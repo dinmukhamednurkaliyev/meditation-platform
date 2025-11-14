@@ -11,41 +11,41 @@ class SilentMoonDimension {
 class _PaddingSize {
   _PaddingSize();
 
-  double get base => 12;
-  double get high => 24;
-  double get loose => 48;
-  double get low => 8;
-  double get max => 64;
-  double get mid => 16;
-  double get min => 0;
-  double get tight => 4;
-  double get wide => 32;
+  final double base = 12;
+  final double high = 24;
+  final double loose = 48;
+  final double low = 8;
+  final double max = 64;
+  final double mid = 16;
+  final double min = 0;
+  final double tight = 4;
+  final double wide = 32;
 }
 
 class _RadiusSize {
   _RadiusSize();
 
-  double get base => 8;
-  double get high => 16;
-  double get loose => 32;
-  double get low => 4;
-  double get max => 999;
-  double get mid => 12;
-  double get min => 0;
-  double get tight => 2;
-  double get wide => 24;
+  final double base = 8;
+  final double high = 16;
+  final double loose = 32;
+  final double low = 4;
+  final double max = 999;
+  final double mid = 12;
+  final double min = 0;
+  final double tight = 2;
+  final double wide = 24;
 }
 
 class _SpacingSize {
   _SpacingSize();
 
-  double get base => 12;
-  double get high => 24;
-  double get loose => 48;
-  double get low => 8;
-  double get max => 64;
-  double get mid => 16;
-  double get min => 0;
-  double get tight => 4;
-  double get wide => 32;
+  final double base = 12;
+  final double high = 24;
+  final double loose = 48;
+  final double low = 8;
+  final double max = 64;
+  final double mid = 16;
+  final double min = 0;
+  final double tight = 4;
+  final double wide = 32;
 }

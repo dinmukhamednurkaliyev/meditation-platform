@@ -11,17 +11,17 @@ class SilentMoonAnimation {
 class _AnimationCurve {
   _AnimationCurve();
 
-  Curve get accelerate => Curves.easeIn;
-  Curve get decelerate => Curves.easeOut;
-  Curve get standard => Curves.easeInOut;
+  final Curve accelerate = Curves.easeIn;
+  final Curve decelerate = Curves.easeOut;
+  final Curve standard = Curves.easeInOut;
 }
 
 class _AnimationDuration {
   _AnimationDuration();
 
-  Duration get long => const Duration(milliseconds: 500);
-  Duration get longest => const Duration(milliseconds: 800);
-  Duration get medium => const Duration(milliseconds: 300);
-  Duration get short => const Duration(milliseconds: 150);
-  Duration get shortest => const Duration(milliseconds: 75);
+  final Duration long = const Duration(milliseconds: 500);
+  final Duration longest = const Duration(milliseconds: 800);
+  final Duration medium = const Duration(milliseconds: 300);
+  final Duration short = const Duration(milliseconds: 150);
+  final Duration shortest = const Duration(milliseconds: 75);
 }

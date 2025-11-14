@@ -20,7 +20,6 @@ class SilentMoonTheme {
       secondary: SilentMoon.color.semantic.secondary.main,
       onSecondary: SilentMoon.color.semantic.secondary.on,
       tertiary: SilentMoon.color.semantic.tertiary.main,
-      onTertiary: SilentMoon.color.semantic.tertiary.on,
     );
 
     final textTheme = TextTheme(

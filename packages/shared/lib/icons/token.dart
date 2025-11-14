@@ -11,29 +11,28 @@ class SilentMoonIcon {
 class _IconSize {
   _IconSize();
 
-  double get base => 24;
-  double get high => 32;
-  double get loose => 48;
-  double get low => 20;
-  double get max => 64;
-  double get mid => 28;
-  double get min => 12;
-  double get tight => 16;
-  double get wide => 40;
+  final double base = 24;
+  final double high = 32;
+  final double loose = 48;
+  final double low = 20;
+  final double max = 64;
+  final double mid = 28;
+  final double min = 12;
+  final double tight = 16;
+  final double wide = 40;
 }
 
 class _LogoIcons {
   _LogoIcons();
 
-  String get dark => 'packages/silent_moon_core/assets/icons/logo_dark.svg';
-  String get light => 'packages/silent_moon_core/assets/icons/logo_light.svg';
+  final String dark = 'packages/silent_moon_core/assets/icons/logo_dark.svg';
+  final String light = 'packages/silent_moon_core/assets/icons/logo_light.svg';
 }
 
 class _SocialIcons {
   _SocialIcons();
 
-  String get facebook =>
-      'packages/silent_moon_core/assets/icons/facebook_icon.svg';
+  final String facebook = 'packages/silent_moon_core/assets/icons/facebook_icon.svg';
 
-  String get google => 'packages/silent_moon_core/assets/icons/google_icon.svg';
+  final String google = 'packages/silent_moon_core/assets/icons/google_icon.svg';
 }
